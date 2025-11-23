@@ -52,7 +52,7 @@ Value Notation [n]
 
 Opcode Reference Table
 
-``
+```
 Opcode Parameter Description Example Usage
 `0` ❌ `Forbidden Clear global num value 0`
 `1` ✅ `Optional Increment current cell value 1, 1[5], 1[$], 1[&]`
@@ -68,7 +68,7 @@ Opcode Parameter Description Example Usage
 `-` ✅ `Optional Subtract from global num -, -[8], -[$], -[&]`
 `*` ✅ `Optional Multiply global num *, *[2], *[$], *[&]`
 `/` ✅ `Optional Divide global num (integer division) /, /[4], /[$], /[&]`
-``
+```
 
 Detailed Opcode Examples
 
