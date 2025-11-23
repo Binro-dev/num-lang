@@ -27,9 +27,12 @@ python install.py --uninstall
 Running NUM Programs
 
 Command Description
-num -f filename.num Run a NUM file
-echo "<code>" \| num Quick execution from command line
-num --version Check NUM version
+```  
+num -f filename.num // Run a NUM file
+echo "<code>" | num // Quick execution from command line
+num --version // check NUM version
+num --help // for more info about the usage
+```
 
 Language Basics
 
