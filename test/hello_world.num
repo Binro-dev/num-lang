@@ -1,0 +1,33 @@
+# this is a test code in "num" for "Hello, world!".
+
+9[0] # going to cell 0 (default but still...)!!
+
+# storing char by char from cell 0 -> n 
+1[72]  7 +    # H 
+1[101] 7 +    # e
+1[108] 7 +    # l 
+1[108] 7 +    # l
+1[111] 7 +    # o 
+1[44]  7 +    # ,
+1[32]  7 +    # ' '
+1[119] 7 +    # w 
+1[111] 7 +    # o
+1[114] 7 +    # r
+1[108] 7 +    # l
+1[100] 7 +    # d 
+1[33]  7 +    # !
+1[10]  7 +    # '\n'
+
+# we used 1.n* for increasing current cell's value by n 
+# we used 7 to jump to the next cell 
+# we used '+' to increase the value of num; measuring len of str 
+
+# displaying 
+9[0] # going back to cell 0 
+
+# displaying loop 
+6[&]( # 6.n*, & returns current value of num 
+    4 # displaying current cell 
+    3 # clearing current cell as a cleanup for no reason...
+    7 # going to the next cell
+)

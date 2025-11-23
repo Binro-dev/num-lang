@@ -1,0 +1,2 @@
+#define INTERPRETER_ERROR 1 
+#define TOKENIZER_ERROR 2

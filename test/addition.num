@@ -1,0 +1,60 @@
+# this is a test code in "num" for adding 2 numbers. 
+# here, num 1 = 10 and num 2 = 10, you can change if you want. 
+
+9[0] # just going to cell 0 even if default is cell 0, to feel more redable later
+1[1] # first byte of num 1 (target = 10) in cell 0 
+7
+1[0] # second byte of num 1 in cell 1
+
+9[2] 
+1[1] # first byte of num 2 (target = 10) in cell 2 
+7
+1[0] # second byte if num 2 in cell 3
+
+# first byte of result (cell 0 + cell 2) in cell 4 
+# second byte of result (cell 1 + cell 3) in cell 5 
+
+# cell 0 + cell 2 -> cell 4
+9[0] 
++[$]
+3
+
+9[2]
++[$]
+3
+
+9[4]
+1[&]
+0
+
+# cell 1 + cell 3 -> cell 5 
+9[1]
++[$]
+3
+
+9[2]
++[$]
+3
+
+9[5]
+1[&]
+0
+
+# now, value's first byte in cell 4 and second byte in cell 5 
+# for displaying, we needa convert the integer numbers into char else it would print ASCII id of value, we need the value as number itself...
+# 0 (int) : '0' 48 in ASCII 
+
+# changing cell 4 (first byte)
+9[4] 
+1[48] 
+4 3 # displaying and clering
+
+# changing cell 5 (second byte)
+9[5]
+1[48]
+4 3  # displaying and clearing
+
+# finally, display a new line
+3 
+1[10]
+4 3

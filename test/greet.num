@@ -1,0 +1,98 @@
+# this is a test code in "num" for greeting the user.
+
+# displaying prompt 
+# we are gonna store all bytes for prompt in different cells and display (clear after display)
+9[0] # jumped to cell 1 to start string
+
+# setting up of bytes 
+1[69]   7    +       # E 
+1[110]  7    +       # n 
+1[116]  7    +       # t 
+1[101]  7    +       # e 
+1[114]  7    +       # r 
+1[32]   7    +       # ' '
+1[121]  7    +       # y 
+1[111]  7    +       # o 
+1[117]  7    +       # u 
+1[114]  7    +       # r 
+1[32]   7    +       # ' '
+1[110]  7    +       # n 
+1[97]   7    +       # a 
+1[109]  7    +       # m 
+1[101]  7    +       # e 
+1[32]   7    +       # ' '
+1[58]   7    +       # : 
+1[32]   7    +       # ' '
+
+# display the prompt using a loop which repeats 18 times 
+9[0] # pointing to the string
+6[&](  # size in num cuz we used '+' to inc 
+    4   # display the character at current cell
+    3   # clearing the value to 0
+    7   # move to next cell
+)
+0 # clearing num
+
+# next, input the name from the user. 
+
+# going to cell 99 as to store name in cells from 100 
+9[99]
+
+# read char by char from the user (max : 20)
+6[20](
+    7 # go to the next cell 
+    5 # get char to the cell 
+    4 # display the entered cell 
+    + # increase the value of num by 1 (for storing the name length)
+
+    2[10] 2 # if newline, break! (if value of current cell is < 0, loop breaks)
+)
+
+# now, we have name stored in 100, 101, 102, ... (max) 120 
+# name length in cell 99
+# now, just GREET the user 
+# before, we needa save value of num in a cell ciz num has high demand! (let it be 99)
+9[99] 3 1[&] 0 # we did it!  (also cleared num!!)
+
+# first greet : "Hello, " 
+9[0] # moving to 0th cell to store first greet from 1..n 
+
+# storing first greet 
+1[72]       7    +       # H
+1[101]      7    +       # e 
+1[108]      7    +       # l
+1[108]      7    +       # l
+1[111]      7    +       # o
+1[44]       7    +       # , 
+1[32]       7    +       # ' '
+
+# displaying first greet 
+9[0] # pointing to the string ptr
+6[&](   # size in num
+    4   # display current cell 
+    3   # clear current cell 
+    7   # move to the next cell
+)
+0 # num = 0.
+
+# displaying name 
+# remember : 
+# 1. Name ptr starts from cell 100 
+# 2. Name len stored in cell 99
+
+9[99] # going to cell 99 
+2 # straping the last cell (newline)
+6[$]( # running the loop {value of cell} times
+    7       # moving to next cell 
+    1[10] 1 # increasing by 10 and a 1 cuz previously we reduced 10 and a 1 for detecting newline! (if value if 10, 10 - 10 -1 becomes -1, lesser than 0, so loop breaks!)
+    4       # displaying current cell  
+    3       # clearing the current cell
+)
+
+# displaying finel greet (!\n)
+# It's only 2 bytes, no need of a loop, we can mannually do!
+9[0] 3 # moving to cell 0 and reseting to 0 (just for no bugs)
+
+# displaying  
+1[33] 4 3 # displaying '!' and clearing to 0
+1[10] 4 3 # displaying '\n' and clearing to 0
