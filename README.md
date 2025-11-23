@@ -53,7 +53,7 @@ Value Notation [n]
 Opcode Reference Table
 
 ```
-Opcode Parameter Description Example Usage
+Opcode | Parameter [n] | Description| Example Usage
 `0` ❌ `Forbidden Clear global num value 0`
 `1` ✅ `Optional Increment current cell value 1, 1[5], 1[$], 1[&]`
 `2` ✅ `Optional Decrement current cell value 2, 2[10], 2[$], 2[&]`
